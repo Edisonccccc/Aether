@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aether"
+version = "0.1.0"
+description = "Graph-Native Planning System"
+requires-python = ">=3.9"
+dependencies = [
+    "anthropic>=0.40.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+aether = "aether.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aether"]
